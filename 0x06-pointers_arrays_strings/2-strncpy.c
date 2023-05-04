@@ -7,16 +7,19 @@
  *
  * Return: dest
  */
-char *_strncpy(char *dest, const char *src, size_t n)
+char *_strncpy(char *dest, char *src, int n)
 {
-size_t i;
-for (i = 0; i < n && src[i] != '\0'; i++)
+int j;
+j = 0;
+while (j < n && src[j] != '\0')
 {
-dest[i] = src[i];
+dest[j] = src[j];
+j++;
 }
-for (; i < n; i++)
+while (j < n)
 {
-dest[i] = '\0';
+dest[j] = '\0';
+j++;
 }
 return (dest);
 }
